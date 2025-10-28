@@ -1,7 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.IO.Compression;
-using System.Runtime.InteropServices;
-
 public class Word
 {
     //Attributres

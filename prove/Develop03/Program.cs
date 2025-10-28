@@ -6,7 +6,6 @@ class Program
     {
         // Console.WriteLine("Hello Develop03 World!");
 
-        Console.Clear();
         //print scripture
     }
 }
