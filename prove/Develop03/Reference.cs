@@ -24,10 +24,21 @@ public class Reference
     //Methods
     public string GetReference()
     {
-        if(string.IsNullOrWhiteSpace(_endVerse))
+        if (string.IsNullOrWhiteSpace(_endVerse))
         {
-            return $"{_book} {_chatper}: {_startVerse}";
+            return $"{_book} {_chatper}:{_startVerse}";
         }
-        return $"{_book} {_chatper}: {_startVerse}-{_endVerse}";
+        return $"{_book} {_chatper}:{_startVerse}-{_endVerse}";
+    }
+    
+    public void SetReference(string book, string chapter, string startVerse, string endVerse)
+    {
+        _book = book;
+        _chatper = chapter;
+        _startVerse = startVerse;
+        if (endVerse != "")
+        {
+            _endVerse = endVerse;
+        }
     }
 }
