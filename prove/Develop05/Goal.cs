@@ -10,25 +10,21 @@ public abstract class Goal
     //Constructor
     public Goal(string name, string description, int points)
     {
-        name = _name;
-        description = _description;
-        points = _pointValue;
+        _name = name;
+        _description = description;
+        _pointValue = points;
+    }
+    public Goal(string name, string description, int points, bool completed)
+    {
+        _name = name;
+        _description = description;
+        _pointValue = points;
+        _isComplete = completed;
     }
 
     //Methods
-    public abstract void DisplayGoal();
+    public abstract string DisplayGoal();
     public abstract void CompleteGoal();
-    public abstract void CalculatePoints();
-    public int GetPoints()
-    {
-        return _pointTotal;
-    }
-    public virtual void SaveGoals()
-    {
-        
-    }
-    public virtual void LoadGoals()
-    {
-        
-    }
+    public abstract int GetPointValue();
+    public abstract string GetStringRepresentation();
 }

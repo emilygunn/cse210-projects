@@ -1,0 +1,4 @@
+0|40
+SimpleGoal:a|a|10|True
+EternalGoal:a|a|5|True|2
+ChecklistGoal:a|a|20|False|1|3|50

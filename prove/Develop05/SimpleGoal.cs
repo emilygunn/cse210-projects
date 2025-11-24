@@ -1,25 +1,46 @@
+using System.Runtime.InteropServices;
+
 public class SimpleGoal : Goal
 {
-    //Constructor
+    //Constructors
     public SimpleGoal(string name, string description, int pointValue) : base (name, description, pointValue)
+    {
+        
+    }
+    public SimpleGoal(string name, string description, int pointValue, bool completed) : base (name, description, pointValue, completed)
     {
         
     }
 
     //Methods
-    public override void DisplayGoal()
-    {
-        
-    }
-    public override void CompleteGoal()
-    {
-        _isComplete = true;
-    }
-    public override void CalculatePoints()
+    public override string DisplayGoal()
     {
         if (_isComplete)
         {
-            _pointTotal += _pointValue;
+            return $"[X] {_name }: {_description}";
         }
+        else
+        {
+            return $"[ ] {_name }: {_description}";
+        }
+    }
+    public override void CompleteGoal()
+    {
+        if (!_isComplete)
+        {
+            _isComplete = true;
+        }
+        else
+        {
+            Console.WriteLine("This goal is already completed.");
+        }
+    }
+    public override int GetPointValue()
+    {
+        return _pointValue;
+    }
+    public override string GetStringRepresentation()
+    {
+        return $"SimpleGoal:{_name}|{_description}|{_pointValue}|{_isComplete}";
     }
 }
