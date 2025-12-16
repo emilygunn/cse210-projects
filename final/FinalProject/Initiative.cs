@@ -1,20 +1,33 @@
 public class Initiative
 {
+    //Only used by Encounter
+
     //Attributes
-    private List<Character> _characters = new List<Character>();
+    private List<string> _characters = new List<string>();
     private int _numOfChar;
 
     //Constructor
     public Initiative(int numOfCharacters)
     {
         _numOfChar = numOfCharacters;
-        //TODO Prompt to add the number of characters to the list
-        //"What is the next character (#1) in the list?"
+        
+        for (int i = 1; i <= _numOfChar; ++i)
+        {
+            Console.Write($"What is the next character (#{i}) in the list? ");
+            _characters.Add(Console.ReadLine());
+        }
     }
 
     //Methods
-    public List<Character> CreateInit()
+    public string DisplayInit()
     {
-        return _characters;
+        int index = 1;
+        string showInit = "";
+        foreach (string c in _characters)
+        {
+            showInit += $"{index}. {c}\n";
+            index++;
+        }
+        return showInit;
     }
 }

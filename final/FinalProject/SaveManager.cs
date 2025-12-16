@@ -1,21 +1,22 @@
-public class SaveManager
-{
-    //Attributes
-    private string _fileName;
+// public class SaveManager
+// {
+//     //FUTURE ADDITION
+//     //Attributes
+//     private string _fileName;
 
-    //Constructor
-    public SaveManager()
-    {
+//     //Constructor
+//     public SaveManager()
+//     {
         
-    }
+//     }
 
-    //Methods
-    public void SaveToFile()
-    {
+//     //Methods
+//     public void SaveToFile()
+//     {
         
-    }
-    public void LoadFile()
-    {
+//     }
+//     public void LoadFile()
+//     {
         
-    }
-}
+//     }
+// }

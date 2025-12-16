@@ -13,7 +13,6 @@ public class Counter
         _doesCountUp = doesCountUp;
         _currentCount = countFrom;
         _countFrom = countFrom;
-        DisplayCounter();
     }
 
     //Methods
@@ -26,16 +25,14 @@ public class Counter
         if (_doesCountUp)
         {
             _currentCount += 1;
-            DisplayCounter();
         }
         else
         {
             _currentCount -= 1;
-            DisplayCounter();
         }
     }
     // public void ResetCounter()
     // {
-        
+        //Uses countFrom
     // }
 }

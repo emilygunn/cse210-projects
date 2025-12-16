@@ -10,7 +10,6 @@ public class Character
     protected bool _isDown;
     protected bool _isDead;
     protected bool _hasCondition;
-    protected List<string> _conditions = new List<string>();
 
     //Constructors
     public Character(string name, string race, string clas, int currentHP, int maxHP, int ac, bool isDown, bool isDead, bool hasCondition)
@@ -46,10 +45,6 @@ public class Character
             return $"{_name} - {_race} {_class}\n  HP: {_currentHP}/{_maxHP} | AC: {_ac}\n  Status: Dead | HasCondition: {_hasCondition}";
         }
         return $"{_name} - {_race} {_class}\n  HP: {_currentHP}/{_maxHP} | AC: {_ac}\n  Status: Alive | HasCondition: {_hasCondition}";
-    }
-    public List<string> GetConditions()
-    {
-        return _conditions;
     }
     public void ToggleHasCondition()
     {
@@ -159,92 +154,6 @@ public class Character
                     Console.WriteLine("Invalid Input");
                 }
                 break;
-            //  case "8": //Condition //TODO Move to ConditionTracker //TODO Create conditions through ConditionTracker then toggle hasCondition
-            //     Console.Write("Would you like to Add or Remove a condition? ");
-            //     string conditionRes1 = Console.ReadLine().Trim().ToLower();
-
-            //     if (conditionRes1 == "add")
-            //     {
-            //         _hasCondition = true;
-            //         Console.Write("What condition would you like to add? ");
-            //         string conditionRes2 = Console.ReadLine().Trim().ToLower();
-            //         switch (conditionRes2)
-            //         {
-            //             case "blinded":
-            //                 _conditions.Add(new ConditionTracker(_name, "Blinded").GetConditionName());
-            //                 break;
-            //             case "charmed":
-            //                 _conditions.Add(new ConditionTracker(_name, "Charmed").GetConditionName());
-            //                 break;
-            //             case "deafened":
-            //                 _conditions.Add(new ConditionTracker(_name, "Deafened").GetConditionName());
-            //                 break;
-            //             case "frightened":
-            //                 _conditions.Add(new ConditionTracker(_name, "Frightened").GetConditionName());
-            //                 break;
-            //             case "grappled":
-            //                 _conditions.Add(new ConditionTracker(_name, "Grappled").GetConditionName());
-            //                 break;
-            //             case "incapacitated":
-            //                 _conditions.Add(new ConditionTracker(_name, "Incapacitated").GetConditionName());
-            //                 break;
-            //             case "invisible":
-            //                 _conditions.Add(new ConditionTracker(_name, "Invisible").GetConditionName());
-            //                 break;
-            //             case "paralyzed":
-            //                 _conditions.Add(new ConditionTracker(_name, "Paralyzed").GetConditionName());
-            //                 break;
-            //             case "petrified":
-            //                 _conditions.Add(new ConditionTracker(_name, "Petrified").GetConditionName());
-            //                 break;
-            //             case "poisoned":
-            //                 _conditions.Add(new ConditionTracker(_name, "Poisoned").GetConditionName());
-            //                 break;
-            //             case "prone":
-            //                 _conditions.Add(new ConditionTracker(_name, "Prone").GetConditionName());
-            //                 break;
-            //             case "restrained":
-            //                 _conditions.Add(new ConditionTracker(_name, "Restrained").GetConditionName());
-            //                 break;
-            //             case "stunned":
-            //                 _conditions.Add(new ConditionTracker(_name, "Stunned").GetConditionName());
-            //                 break;
-            //             case "unconscious":
-            //                 _conditions.Add(new ConditionTracker(_name, "Unconscious").GetConditionName());
-            //                 break;
-            //             case "exhaustion":
-            //                 _conditions.Add(new ConditionTracker(_name, "Exhaustion").GetConditionName());
-            //                 break;
-            //         }
-            //     }
-            //     else if (conditionRes1 == "remove")
-            //     {
-            //         _hasCondition = false;
-            //         if (_conditions.Count > 1)
-            //         {
-            //             int counter = 1;
-            //             Console.WriteLine("Conditions:");
-            //             foreach (string condition in _conditions)
-            //             {
-            //                 Console.WriteLine($"{counter}. {condition}");
-            //                 ++counter;
-            //             }
-            //             Console.Write("Which would you like to remove? ");
-            //             int.TryParse(Console.ReadLine(), out int removeCon);
-            //             int index = removeCon - 1;
-            //             string toRemove = _conditions[index];
-            //             _conditions.Remove(toRemove);
-            //         }
-            //         else
-            //         {
-            //             _conditions.Clear();
-            //         }
-            //     }
-            //     else
-            //     {
-            //         Console.WriteLine("Invalid Input");
-            //     }
-            //     break;
         }
     }
 }

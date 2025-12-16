@@ -17,6 +17,7 @@ Future Additions:
 - Character Speed
 - Reset Counter (Prevents having to re-create the same counter)
 
+- Saving and Loading
 - Improved UI
 
 New Class Template:

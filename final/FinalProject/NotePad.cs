@@ -4,18 +4,23 @@ public class NotePad
     private string _noteContents;
 
     //Constructor
-    public NotePad(string contents)
+    public NotePad()
     {
-        _noteContents = contents;
+        Console.Write("What is the note?\n> ");
+        string contents = Console.ReadLine();
+        _noteContents = $"> {contents}";
     }
 
     //Methods
-    public void EditNote(string contents)
+    //Re-writes note
+    public void EditNote()
     {
-        _noteContents = contents;
+        Console.Write("What is the new note?\n> ");
+        string contents = Console.ReadLine();
+        _noteContents = $"> {contents}";
     }
     public string DisplayNote()
     {
-        return "";
+        return _noteContents;
     }
 }

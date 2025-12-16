@@ -28,8 +28,15 @@ public class Npc : Character
     //Methods
     public bool ToggleIsHidden()
     {
+        if (_isHidden)
+        {
+            _isHidden = false;
+        }
+        else
+        {
+            _isHidden = true;
+        }
         return _isHidden;
-        //TODO finish toggle
     }
     public bool GetVisibility()
     {
@@ -37,8 +44,21 @@ public class Npc : Character
     }
     public override string DisplayCharacter()
     {
-        //TODO if full consructor then display base.DisplayCharacter
-        return base.DisplayCharacter();
-        //TODO if short constructor then override
+        if (_class != null)//If full constructor, then display as normal
+        {
+            return base.DisplayCharacter();
+        }
+        else
+        {
+            if(_isDown)
+            {
+                return $"{_name} - {_race}\n  Status: Down | HasCondition: {_hasCondition}";
+            }
+            else if (_isDead)
+            {
+                return $"{_name} - {_race}\n  Status: Dead | HasCondition: {_hasCondition}";
+            }
+            return $"{_name} - {_race}\n  Status: Alive | HasCondition: {_hasCondition}";
+        }
     }
 }

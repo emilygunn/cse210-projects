@@ -1,7 +1,6 @@
 public class ConditionTracker
 {
     //Attributes
-    private List<string> _conditions = new List<string>();
     private List<string> _conditionNames = new List<string>()
     {
         "Blinded", "Charmed", "Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Pretrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious", "Exhaustion"
@@ -65,6 +64,7 @@ public class ConditionTracker
 
     private int _currentCondition;
     private string _nameOfAfflicted;
+    private bool _isActive = true;
 
     //Constructor
     public ConditionTracker(string nameOfAfflicted, string nameOfCondition)
@@ -85,6 +85,22 @@ public class ConditionTracker
     {
         return $"{_conditionNames[_currentCondition]}";
     }
+    public void ToggleActiveCondition()
+    {
+        if (_isActive)
+        {
+            _isActive = false;
+        }
+        else
+        {
+            _isActive = true;
+        }
+    }
+    public bool GetIsActive()
+    {
+        return _isActive;
+    }
+    //TODO Move to MenuSystem
     // public void CreateCondition()
     // {
     //     Console.Write("What is the name of the character with the condition? ");
