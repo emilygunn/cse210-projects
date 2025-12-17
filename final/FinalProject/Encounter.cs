@@ -2,7 +2,7 @@ public class Encounter
 {
     //Attributes
     Initiative _init;
-    private Counter _roundCount = new Counter("Round", true, 0);//Name of Counter = "Round:", _doesCountUp = true, _countFrom = 0
+    private Counter _roundCount = new Counter("Round", true, 1);//Name of Counter = "Round:", _doesCountUp = true, _countFrom = 1
     private bool _isDifficultTerrain;
     private string _location;
     private int _numOfCharacters;

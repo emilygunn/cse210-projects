@@ -40,27 +40,27 @@ public class DiceRoller
         _numOfDice = numOfDice;
         _diceType = diceType;
         _toAdd = toAdd;
-        RollWithAdd();
+        RollWithMod();
     }
 
     //Methods
-    private void RollAdv()
+    private string RollAdv()
     {
         _roll1 = _randInt.Next(21);
         _roll2 = _randInt.Next(21);
         List<int> _rolls = new List<int>(){_roll1, _roll2};
         
-        Console.WriteLine($"Adv({_roll1},{_roll2}): {_rolls.Max()}");
+        return $"Adv({_roll1},{_roll2}): {_rolls.Max()}";
     }
-    private void RollDis()
+    private string RollDis()
     {
         _roll1 = _randInt.Next(21);
         _roll2 = _randInt.Next(21);
         List<int> _rolls = new List<int>(){_roll1, _roll2};
         
-        Console.WriteLine($"Dis({_roll1},{_roll2}): {_rolls.Min()}");
+        return $"Dis({_roll1},{_roll2}): {_rolls.Min()}";
     }
-    private void RollFlat()//Used numOfDice and diceType
+    private string RollFlat()//Used numOfDice and diceType
     {
         string rollResults = "";
         int rollTotal = 0;
@@ -77,9 +77,9 @@ public class DiceRoller
                 rollResults += $"{_roll1} + ";
             }
         }
-        Console.WriteLine($"Flat Roll({_numOfDice}d{_diceType}): {rollResults} = {rollTotal}");
+        return $"Flat Roll({_numOfDice}d{_diceType}): {rollResults} = {rollTotal}";
     }
-    private void RollWithAdd()//Uses numOfDice, diceType, and toAdd
+    private string RollWithMod()//Uses numOfDice, diceType, and toAdd
     {
         string rollResults = "";
         int rollTotal = 0;
@@ -97,6 +97,6 @@ public class DiceRoller
             }
         }
         rollTotal += _toAdd;
-        Console.WriteLine($"Roll({_numOfDice}d{_diceType} + {_toAdd}): {rollResults} + {_toAdd} = {rollTotal}");
+        return $"Roll({_numOfDice}d{_diceType} + {_toAdd}): {rollResults} + {_toAdd} = {rollTotal}";
     }
 }

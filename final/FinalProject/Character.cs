@@ -9,10 +9,10 @@ public class Character
     protected int _ac;
     protected bool _isDown;
     protected bool _isDead;
-    protected bool _hasCondition;
+    protected bool _hasCondition = false;
 
     //Constructors
-    public Character(string name, string race, string clas, int currentHP, int maxHP, int ac, bool isDown, bool isDead, bool hasCondition)
+    public Character(string name, string race, string clas, int currentHP, int maxHP, int ac, bool isDown, bool isDead)
     {
         _name = name;
         _race = race;
@@ -22,15 +22,13 @@ public class Character
         _ac = ac;
         _isDown = isDown;
         _isDead = isDead;
-        _hasCondition = hasCondition;
     }
-    public Character(string name, string race, bool isDown, bool isDead, bool hasCondition)
+    public Character(string name, string race, bool isDown, bool isDead)
     {
         _name = name;
         _race = race;
         _isDown = isDown;
         _isDead = isDead;
-        _hasCondition = hasCondition;
     }
 
     //Methods
@@ -57,9 +55,13 @@ public class Character
             _hasCondition = true;
         }
     }
+    public string GetName()
+    {
+        return _name;
+    }
     public virtual void UpdateInfo()
     {
-        Console.WriteLine("UPDATE CHARACTER INFO:\n");
+        Console.WriteLine("\nUpdate Chatacter Info:");
         Console.WriteLine("1. Name\n2. Race\n3. Class\n4. Current HP\n5. Max HP\n6. Armor Class\n7. Status");
 
         Console.Write("\nWhat would you like to update? ");
@@ -83,7 +85,7 @@ public class Character
                 Console.WriteLine("Updating Current HP:");
                 Console.Write("+ or - : ");
                 string currentHpEdit = Console.ReadLine().Trim();
-                Console.WriteLine("Enter how much: ");
+                Console.Write("Enter how much: ");
                 int.TryParse(Console.ReadLine(), out int currentNum);
                 int changeBy = currentNum;
 
@@ -110,7 +112,7 @@ public class Character
                 }
                 break;
             case "5": //Max HP
-                Console.WriteLine("Enter New Max HP:");
+                Console.Write("Enter New Max HP:");
                 int.TryParse(Console.ReadLine(), out int newMax);
                 _maxHP = newMax;
                 break;

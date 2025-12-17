@@ -10,14 +10,12 @@ class Program
         //TESTING
 
         // //Testing character display and editing character info
-        //TODO fix Conditions
         // Character test = new Character("Gavea", "Goliath", "Paladin", 82, 88, 18, false, false, false);
         // Console.WriteLine(test.DisplayCharacter());
         // test.UpdateInfo();
         // Console.WriteLine(test.DisplayCharacter());
 
         // //Testing condition display
-        //TODO fix
         // ConditionTracker testCon = new ConditionTracker("Gavea", "Prone");
         // Console.WriteLine(testCon.DisplayCondition());
 
@@ -72,16 +70,13 @@ class Program
         // //Player
         // Player testPlayer = new Player("Feral", "Tiefling", "Rouge", 10, 25, 16, false, false, true);
         // Console.WriteLine(testPlayer.DisplayCharacter());
-        //NPC
-        Npc testNpc = new Npc("Whisper", "Shifter", false, false, false);
-        Console.WriteLine(testNpc.DisplayCharacter());
-        Npc testNpc2 = new Npc("Whisper", "Shifter", "Fighter", 36, 36, 12, false, true, false);
-        Console.WriteLine(testNpc2.DisplayCharacter());
+        // //NPC
+        // Npc testNpc = new Npc("Whisper", "Shifter", false, false, false);
+        // Console.WriteLine(testNpc.DisplayCharacter());
+        // Npc testNpc2 = new Npc("Whisper", "Shifter", "Fighter", 36, 36, 12, false, true, false);
+        // Console.WriteLine(testNpc2.DisplayCharacter());
 
-        //Test MenuSystem
-
-        //Interface
-
-        //Program
+        //PROGRAM
+        MenuSystem menu = new MenuSystem();
     }
 }

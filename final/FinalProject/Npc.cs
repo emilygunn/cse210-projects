@@ -4,7 +4,7 @@ public class Npc : Character
     private bool _isHidden;
 
     //Constructors
-    public Npc(string name, string race, string clas, int currentHP, int maxHP, int ac, bool isDown, bool isDead, bool hasCondition) :base (name, race, clas, currentHP, maxHP, ac, isDown, isDead, hasCondition)
+    public Npc(string name, string race, string clas, int currentHP, int maxHP, int ac, bool isDown, bool isDead) :base (name, race, clas, currentHP, maxHP, ac, isDown, isDead)
     {
         _name = name;
         _race = race;
@@ -14,15 +14,13 @@ public class Npc : Character
         _ac = ac;
         _isDown = isDown;
         _isDead = isDead;
-        _hasCondition = hasCondition;
     }
-    public Npc(string name, string race, bool isDown, bool isDead, bool hasCondition) : base (name, race, isDown, isDead, hasCondition)
+    public Npc(string name, string race, bool isDown, bool isDead) : base (name, race, isDown, isDead)
     {
         _name = name;
         _race = race;
         _isDown = isDown;
         _isDead = isDead;
-        _hasCondition = hasCondition;
     }
 
     //Methods

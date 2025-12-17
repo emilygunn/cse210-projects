@@ -13,7 +13,7 @@ public class Initiative
         
         for (int i = 1; i <= _numOfChar; ++i)
         {
-            Console.Write($"What is the next character (#{i}) in the list? ");
+            Console.Write($"\nWhat is the next character (#{i}) in the list? ");
             _characters.Add(Console.ReadLine());
         }
     }
@@ -25,8 +25,15 @@ public class Initiative
         string showInit = "";
         foreach (string c in _characters)
         {
-            showInit += $"{index}. {c}\n";
-            index++;
+            if (index == _characters.Count())
+            {
+                showInit += $"{index}. {c}";
+            }
+            else
+            {
+                showInit += $"{index}. {c}\n";
+                index++;
+            }
         }
         return showInit;
     }
